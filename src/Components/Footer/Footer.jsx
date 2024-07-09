@@ -13,7 +13,7 @@ const Footer = () => {
                     />
                     <hr className="border-t border-gray-600 flex-grow" />
                 </div>
-            </div>
+            </div> 
             <div className="container mx-auto flex flex-wrap justify-between">
                 <div className="w-full md:w-1/4 mb-6 md:mb-0 text-center md:text-left">
                     <h5 className="font-bold text-xl mb-2">ADDRESS</h5>
