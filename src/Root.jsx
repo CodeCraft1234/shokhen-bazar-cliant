@@ -1,32 +1,31 @@
-import { Outlet } from "react-router-dom";
+import { useContext } from "react";
+import { Outlet, useLocation } from "react-router-dom";
+import { AuthContext } from "../Security/AuthProvider";
+import ScrollTop from "./Pages/ScrollTop";
+import TheAdmin from "./Pages/TheAdmin";
 import NavBar from "./Components/Navber/Navber";
 import Footer from "./Components/Footer/Footer";
-import Banner from "./Components/Banner/Banner";
-import Services from "./Components/Services/Services";
-import ClientReview from "./Components/ClientReview/ClientReview";
-import AlwaysOrganic from "./Components/AlwaysOrganic/AlwaysOrganic";
-import LatestNews from "./Components/LatestNews/LatestNews";
-import Guarantee from "./Components/Gurantee/Gurantee";
-import PopularProduct from "./Components/PopularProduct/PopularProduct";
 
 
 const Root = () => {
-    return (
-        <div>
-            <NavBar></NavBar>
-            <Banner></Banner>
-            <Services></Services>
-            <PopularProduct></PopularProduct>
-            <AlwaysOrganic></AlwaysOrganic>
-            <ClientReview></ClientReview>
-            <LatestNews></LatestNews>
-            <Guarantee></Guarantee>
-           <div className="min-h-screen">
-           <Outlet></Outlet>
-           </div>
-            <Footer></Footer>
-        </div>
-    );
+  const location = useLocation();
+  const noheaderfooter =
+    location.pathname.includes("dashboard") ||
+    location.pathname.includes("login") ||
+    location.pathname.includes("signup");
+    location.pathname.includes("search");
+
+  return (
+    <div className="bg-white">
+      <ScrollTop />
+      {noheaderfooter || <TheAdmin />}
+      {noheaderfooter || <NavBar />}
+      <div className="min-h-screen overflow-y-hidden max-w-auto mx-auto">
+        <Outlet />
+      </div>
+      {noheaderfooter || <Footer />}
+    </div>
+  );
 };
 
 export default Root;
