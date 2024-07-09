@@ -4,28 +4,28 @@ const PopularProduct = () => {
     const products = [
         {
             id: 1,
-            image: 'https://example.com/image1.jpg',
+            image: 'https://i.ibb.co/XXMJ6Qb/Paikari-Ghor-Lip-Balm-Poster-3.jpg',
             title: 'PKG Secret Lip balm',
             description: 'Best Lip Balm For Lips In BD লিপবামের এক ধরণের তৈলাক্ত মসল যা আমাদের ঠোঁটকে...',
             price: '550.00৳',
         },
         {
             id: 2,
-            image: 'https://example.com/image2.jpg',
+            image: 'https://i.ibb.co/XXMJ6Qb/Paikari-Ghor-Lip-Balm-Poster-3.jpg',
             title: 'সিক্রেট পোর মিনিমাইজার প্যাক',
             description: 'যে কোন ধরনের ত্বকের গর্ভের বিচ্ছু ত্বকের ছিদ্র দূর করতে এই প্যাক সবচেয়ে কার্যকর।...',
             price: '430.00৳',
         },
         {
             id: 3,
-            image: 'https://example.com/image3.jpg',
+            image: 'https://i.ibb.co/XXMJ6Qb/Paikari-Ghor-Lip-Balm-Poster-3.jpg',
             title: 'সিক্রেট ট্যানরিমুভ প্যাক',
             description: 'ট্যানরিমুভ করতে এই প্যাক বেশ কার্যকর। এই ট্যানরিমুভ প্যাক নিয়মিত ব্যবহার...',
             price: '410.00৳',
         },
         {
             id: 4,
-            image: 'https://example.com/image4.jpg',
+            image: 'https://i.ibb.co/XXMJ6Qb/Paikari-Ghor-Lip-Balm-Poster-3.jpg',
             title: 'সিক্রেট হেয়ারঅয়েল',
             description: 'পরিমাণ: ২৫০ মিলি ২-৩ মাস ব্যবহার করা যায়। কাজ: দূর করে প্রায় সকল সমস্যার...',
             price: '1,800.00৳',

@@ -77,7 +77,7 @@ const NavBar = () => {
   }, [searchQuery, products]);
 
   return (
-    <div className={`navbar bg-[#FF7701] text-black rounded-md lg:pt-1 px-4 shadow-lg py-2  lg:px-10 md:px-8 fixed z-30 border-b ${user ? 'top-8' : 'top-0'}`}>
+    <div className={`navbar bg-green-600 text-black rounded-md lg:pt-1 px-4 shadow-lg py-2  lg:px-10 md:px-8 fixed z-30 border-b ${user ? 'top-8' : 'top-0'}`}>
       <div className="navbar-start ">
         <div className="dropdown ">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
