@@ -7,6 +7,7 @@ import ClientReview from "./Components/ClientReview/ClientReview";
 import AlwaysOrganic from "./Components/AlwaysOrganic/AlwaysOrganic";
 import LatestNews from "./Components/LatestNews/LatestNews";
 import Guarantee from "./Components/Gurantee/Gurantee";
+import PopularProduct from "./Components/PopularProduct/PopularProduct";
 
 
 const Root = () => {
@@ -15,6 +16,7 @@ const Root = () => {
             <NavBar></NavBar>
             <Banner></Banner>
             <Services></Services>
+            <PopularProduct></PopularProduct>
             <AlwaysOrganic></AlwaysOrganic>
             <ClientReview></ClientReview>
             <LatestNews></LatestNews>
