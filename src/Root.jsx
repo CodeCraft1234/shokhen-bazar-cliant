@@ -6,6 +6,7 @@ import Services from "./Components/Services/Services";
 import ClientReview from "./Components/ClientReview/ClientReview";
 import AlwaysOrganic from "./Components/AlwaysOrganic/AlwaysOrganic";
 import LatestNews from "./Components/LatestNews/LatestNews";
+import Guarantee from "./Components/Gurantee/Gurantee";
 
 
 const Root = () => {
@@ -17,6 +18,7 @@ const Root = () => {
             <AlwaysOrganic></AlwaysOrganic>
             <ClientReview></ClientReview>
             <LatestNews></LatestNews>
+            <Guarantee></Guarantee>
            <div className="min-h-screen">
            <Outlet></Outlet>
            </div>
