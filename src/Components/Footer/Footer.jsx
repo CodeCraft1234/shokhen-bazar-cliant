@@ -54,12 +54,9 @@ const Footer = () => {
             <div className="container mx-auto flex flex-wrap justify-between items-center mt-10">
                 <p className="text-center md:text-left w-full md:w-auto mb-4 md:mb-0">Copyright © 2023 Paikarighor. All Rights Reserved.</p>
                 <div className="flex justify-center md:justify-end space-x-4 w-full md:w-auto">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/Visa_Logo.png" alt="Visa" className="w-10"/>
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Mastercard-logo.png" alt="MasterCard" className="w-10"/>
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/e/e4/Amex_logo_1975.png" alt="AmEx" className="w-10"/>
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/3/39/PayPal_logo.svg" alt="PayPal" className="w-10"/>
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2e/Discover_Card_logo.svg" alt="Discover" className="w-10"/>
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/e/e1/CO-OP_Financial_Services_logo.svg" alt="COD" className="w-10"/>
+                   
+                    
+                    <img src="https://i.ibb.co/BB35LPk/footer-img1.png" alt="COD" className="w-84"/>
                 </div>
             </div>
         </footer>

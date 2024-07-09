@@ -45,7 +45,7 @@ const AddBanner = () => {
     // });
 
     // Post logo to the server
-    AxiosPublic.post("https://hirikbazar.vercel.app/banners", bannerInfoo).then((res) => {
+    AxiosPublic.post("http://localhost:5000/banners", bannerInfoo).then((res) => {
       console.log(res.data);
       Swal.fire({
         position: "top-end",

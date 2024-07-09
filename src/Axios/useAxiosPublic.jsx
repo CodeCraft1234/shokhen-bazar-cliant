@@ -1,7 +1,8 @@
 import axios from "axios";
 
 const AxiosPublic=axios.create({
-    baseURL:'https://hirikbazar.vercel.app'
+ 
+    baseURL:'http://localhost:5000'
 })
 const useAxiosPublic = () => {
     return AxiosPublic
