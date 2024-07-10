@@ -25,7 +25,7 @@ const Contact = () => {
   };
 
   return (
-    <div className="mt-36 p-4">
+    <div className="mt-28 p-4">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
         <div>
           <h2 className="text-2xl mb-4">Call us or visit place</h2>

@@ -116,11 +116,11 @@ const NavBar = () => {
           <Link to={"/"}>
             <img className="h-10 w-16 mt-2 sm:h-16 sm:w-16 md:h-14 md:w-14 lg:h-16 lg:w-32" src={latestLogo?.photo} alt="Logo" />
           </Link>
-          <p className="text-white hover:text-yellow-300 font-bold">Blog</p>
+          <Link to="/blog"><p className="text-white hover:text-yellow-300 font-bold">Blog</p></Link>
           <Link to="/contact"><p className="text-white hover:text-yellow-300 font-bold">Contact</p></Link>
         </div>
       </div>
-      <div className="navbar-center  pt-3 mt-3 lg:flex relative">
+      <div className="navbar-center  pt-3 mt-3 ml-12 mr-12 lg:flex relative">
       <label htmlFor="Search" className="sr-only">Search</label>
       <input
         type="text"
