@@ -33,6 +33,8 @@ import MyCart from "./Components/MyCart/MyCart";
 import Checkout from "./Components/Checkout/Checkout";
 import OrderSuccess from "./Components/OrderSuccess/OrderSuccess";
 import MyFavourite from "./Components/MyFavourite/MyFavourite";
+import Blog from "./Components/Blog/Blog";
+import Contact from "./Components/Contact/Contact";
 
 const router = createBrowserRouter([
   {
@@ -54,6 +56,14 @@ const router = createBrowserRouter([
       {
         path:'/myCart',
         element:<MyCart></MyCart>
+      },
+      {
+        path:'/blog',
+        element:<Blog></Blog>
+      },
+      {
+        path:'/contact',
+        element:<Contact></Contact>
       },
       {
         path:'/myFavourite',
