@@ -29,6 +29,12 @@ import AllUsers from "./Pages/Dashboard/Routes/AllUsers";
 import Notifications from "./Pages/Dashboard/Routes/Notifications";
 import AddBanner from "./Pages/Dashboard/AddBanner";
 import AllProduct from "./Pages/Dashboard/Routes/AllProducts";
+import MyCart from "./Components/MyCart/MyCart";
+import Checkout from "./Components/Checkout/Checkout";
+import OrderSuccess from "./Components/OrderSuccess/OrderSuccess";
+import MyFavourite from "./Components/MyFavourite/MyFavourite";
+import Blog from "./Components/Blog/Blog";
+import Contact from "./Components/Contact/Contact";
 
 const router = createBrowserRouter([
   {
@@ -42,6 +48,30 @@ const router = createBrowserRouter([
       {
         path:'/login',
         element:<Login></Login>
+      },
+      {
+        path:'/checkout/:title/:price',
+        element:<Checkout></Checkout>
+      },
+      {
+        path:'/myCart',
+        element:<MyCart></MyCart>
+      },
+      {
+        path:'/blog',
+        element:<Blog></Blog>
+      },
+      {
+        path:'/contact',
+        element:<Contact></Contact>
+      },
+      {
+        path:'/myFavourite',
+        element:<MyFavourite></MyFavourite>
+      },
+      {
+        path:'/order-success',
+        element: <OrderSuccess></OrderSuccess>
       },
       {
         path:'dashboard',

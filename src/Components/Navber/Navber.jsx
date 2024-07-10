@@ -77,7 +77,7 @@ const NavBar = () => {
   }, [searchQuery, products]);
 
   return (
-    <div className={`navbar bg-[#FF7701] text-black rounded-md lg:pt-1 px-4 shadow-lg py-2  lg:px-10 md:px-8 fixed z-30 border-b ${user ? 'top-8' : 'top-0'}`}>
+    <div className={`navbar bg-green-600 text-black rounded-md lg:pt-1 px-4 shadow-lg py-2  lg:px-10 md:px-8 fixed z-30 border-b ${user ? 'top-8' : 'top-0'}`}>
       <div className="navbar-start ">
         <div className="dropdown ">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -112,13 +112,15 @@ const NavBar = () => {
             </div>
           </ul>
         </div>
-        <div className="flex justify-center items-center">
+        <div className="flex justify-center items-center gap-12">
           <Link to={"/"}>
             <img className="h-10 w-16 mt-2 sm:h-16 sm:w-16 md:h-14 md:w-14 lg:h-16 lg:w-32" src={latestLogo?.photo} alt="Logo" />
           </Link>
+          <Link to="/blog"><p className="text-white hover:text-yellow-300 font-bold">Blog</p></Link>
+          <Link to="/contact"><p className="text-white hover:text-yellow-300 font-bold">Contact</p></Link>
         </div>
       </div>
-      <div className="navbar-center  pt-3 mt-3 lg:flex relative">
+      <div className="navbar-center  pt-3 mt-3 ml-12 mr-12 lg:flex relative">
       <label htmlFor="Search" className="sr-only">Search</label>
       <input
         type="text"

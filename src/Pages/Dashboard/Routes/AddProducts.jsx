@@ -90,7 +90,7 @@ const AddProduct = () => {
   return (
     <div className="px-4 py-3">
       <Helmet>
-        <title>বিশ্বস্ত-বাজার | AddProduct</title>
+        <title>Shokher Bazar | AddProduct</title>
         <link rel="canonical" href="https://www.tacobell.com/" />
       </Helmet>
       <h2 className="text-3xl font-bold mb-6 text-center text-black">Add Product</h2>
@@ -186,13 +186,13 @@ const AddProduct = () => {
             {...register('category', { required: true })}
             className="mt-1 select select-bordered w-full bg-white border-black text-base font-medium text-gray-700"
           >
-            <option value="food">Food</option>
-            <option value="islamicBook">Islamic Book</option>
-            <option value="drink">Drink</option>
-            <option value="allBook">All Book</option>
-            <option value="toy">Toys</option>
-            <option value="internet">Internet</option>
-            <option value="electronic">Electronic</option>
+            <option value="allPack">All Pack</option>
+            <option value="চুলের যত্ন">চুলের যত্ন</option>
+            <option value="ত্বকের যত্ন">ত্বকের যত্ন</option>
+            <option value="মাজুফল">মাজুফল</option>
+            <option value="মুখের যত্ন">মুখের যত্ন</option>
+            <option value="লিপবাম">লিপবাম</option>
+           
           </select>
           {errors.category && <span className="text-red-500 text-sm">Category is required</span>}
         </div>
