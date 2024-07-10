@@ -71,7 +71,6 @@ const router = createBrowserRouter([
             path:'/dashboard/admin/allOrders',
             element:<AllOrders></AllOrders>
           },
-          
           {
             path:'/dashboard/admin/allProducts',
             element:<AllProduct></AllProduct>
