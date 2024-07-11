@@ -1,13 +1,20 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const products = [
-    { id: 1, image: 'https://i.ibb.co/D7dm8F2/hair-oil.webpp', title: 'Shine Your Hair', description: '* one Order call away', buttonText: '100% ORGANIC', buttonClass: 'bg-yellow-400' },
+    { id: 1, image: 'https://i.ibb.co/D7dm8F2/hair-oil.webp', title: 'Shine Your Hair', description: '* one Order call away', buttonText: '100% ORGANIC', buttonClass: 'bg-yellow-400' },
     { id: 2, image: 'https://i.ibb.co/Df7xYfx/hair-pack.webp', title: 'Organic FacePack', description: 'For Online Orders Click Here.', buttonText: 'TOP SELLING', buttonClass: 'bg-yellow-400' },
     { id: 3, image: 'https://i.ibb.co/Bz6dv2B/pacepack.webp', title: 'Organic Hair pack', description: 'For Online Orders in Wednesdays.', buttonText: 'BEST PRODUCT', buttonClass: 'bg-blue-400' },
     { id: 4, image: 'https://i.ibb.co/HzJCKzN/drandraf-pack.webp', title: 'Secret Body pack', description: 'Double Sauce', buttonText: 'WHITE TONE', buttonClass: 'bg-white text-black' }
 ];
 
 const OrganicProduct = () => {
+    const navigate = useNavigate();
+
+    const handleButtonClick = (id) => {
+        navigate(`/product/${id}`);
+    };
+
     return (
         <div className="mt-1 p-4 grid gap-4 lg:grid-cols-4">
             {/* Left side large image */}
@@ -17,7 +24,9 @@ const OrganicProduct = () => {
                     <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-center items-center text-center text-white p-4 rounded-lg">
                         <h1 className="text-4xl font-bold">{products[0].title}</h1>
                         <p className="mt-2">{products[0].description}</p>
-                        <button className={`mt-4 px-4 py-2 rounded text-black hover:text-gray-700 font-bold ${products[0].buttonClass}`}>
+                        <button
+                            onClick={() => handleButtonClick(products[0].id)}
+                            className={`mt-4 px-4 py-2 rounded text-black hover:text-gray-700 font-bold ${products[0].buttonClass}`}>
                             {products[0].buttonText}
                         </button>
                     </div>
@@ -33,7 +42,9 @@ const OrganicProduct = () => {
                             <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-center items-center text-center text-white p-4 rounded-lg">
                                 <h2 className="text-2xl font-bold">{product.title}</h2>
                                 <p className="mt-2">{product.description}</p>
-                                <button className={`mt-4 px-4 py-2 text-black hover:text-gray-700 rounded font-bold ${product.buttonClass}`}>
+                                <button
+                                    onClick={() => handleButtonClick(product.id)}
+                                    className={`mt-4 px-4 py-2 text-black hover:text-gray-700 rounded font-bold ${product.buttonClass}`}>
                                     {product.buttonText}
                                 </button>
                             </div>
@@ -49,7 +60,9 @@ const OrganicProduct = () => {
                     <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-center items-center text-center text-white p-4 rounded-lg">
                         <h2 className="text-2xl font-bold">{products[3].title}</h2>
                         <p className="mt-2">{products[3].description}</p>
-                        <button className={`mt-4 px-4 py-2 rounded text-black hover:text-gray-700 font-bold ${products[3].buttonClass}`}>
+                        <button
+                            onClick={() => handleButtonClick(products[3].id)}
+                            className={`mt-4 px-4 py-2 rounded text-black hover:text-gray-700 font-bold ${products[3].buttonClass}`}>
                             {products[3].buttonText}
                         </button>
                     </div>

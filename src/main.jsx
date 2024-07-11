@@ -35,6 +35,8 @@ import OrderSuccess from "./Components/OrderSuccess/OrderSuccess";
 import MyFavourite from "./Components/MyFavourite/MyFavourite";
 import Blog from "./Components/Blog/Blog";
 import Contact from "./Components/Contact/Contact";
+import ProductDetail from "./Components/ProductDetails/ProductDetails";
+import OrganicProduct from "./Components/OrganicProduct/OrganicProduct";
 
 const router = createBrowserRouter([
   {
@@ -64,6 +66,14 @@ const router = createBrowserRouter([
       {
         path:'/contact',
         element:<Contact></Contact>
+      },
+      {
+        path:'/',
+        element:<OrganicProduct></OrganicProduct>
+      },
+      {
+        path:'/product/:id',
+        element:<ProductDetail></ProductDetail>
       },
       {
         path:'/myFavourite',
