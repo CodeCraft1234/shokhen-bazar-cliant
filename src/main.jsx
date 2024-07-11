@@ -38,6 +38,9 @@ import Contact from "./Components/Contact/Contact";
 import ProductDetail from "./Components/ProductDetails/ProductDetails";
 import OrganicProduct from "./Components/OrganicProduct/OrganicProduct";
 
+import LatestNews from "./Components/LatestNews/LatestNews";
+import NewsDetail from "./Components/NewsDetail/NewsDetail";
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -74,6 +77,14 @@ const router = createBrowserRouter([
       {
         path:'/product/:id',
         element:<ProductDetail></ProductDetail>
+      },
+      {
+        path:'/',
+        element:<LatestNews></LatestNews>
+      },
+      {
+        path:'/news/:id',
+        element:<NewsDetail></NewsDetail>
       },
       {
         path:'/myFavourite',
