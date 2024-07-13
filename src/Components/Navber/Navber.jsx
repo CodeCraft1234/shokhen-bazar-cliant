@@ -77,7 +77,7 @@ const NavBar = () => {
   }, [searchQuery, products]);
 
   return (
-    <div className={`navbar bg-green-600 text-black rounded-md lg:pt-1 px-4 shadow-lg py-2  lg:px-10 md:px-8 fixed z-30 border-b ${user ? 'top-8' : 'top-0'}`}>
+    <div className={`navbar bg-white text-black rounded-md lg:pt-1 px-4 shadow-lg py-2  lg:px-10 md:px-8 fixed z-30 border-b ${user ? 'top-8' : 'top-0'}`}>
       <div className="navbar-start ">
         <div className="dropdown ">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -116,8 +116,9 @@ const NavBar = () => {
           <Link to={"/"}>
             <img className="h-10 w-16 mt-2 sm:h-16 sm:w-16 md:h-14 md:w-14 lg:h-16 lg:w-32" src={latestLogo?.photo} alt="Logo" />
           </Link>
-          <Link to="/blog"><p className="text-white hover:text-yellow-300 font-bold">Blog</p></Link>
-          <Link to="/contact"><p className="text-white hover:text-yellow-300 font-bold">Contact</p></Link>
+          <Link to="/"><p className="text-black hover:text-yellow-300 font-bold">Home</p></Link>
+          <Link to="/blog"><p className="text-black hover:text-yellow-300 font-bold">Blog</p></Link>
+          <Link to="/contact"><p className="text-black hover:text-yellow-300 font-bold">Contact</p></Link>
         </div>
       </div>
       <div className="navbar-center  pt-3 mt-3 ml-12 mr-12 lg:flex relative">
@@ -128,7 +129,7 @@ const NavBar = () => {
         value={searchQuery}
         onChange={(e) => setSearchQuery(e.target.value)}
         placeholder="Search for..."
-        className="w-56 mr-3 lg:w-[400px] rounded-md bg-white border-gray-200 lg:p-2 py-1 md:p-2 -mt-4 px-4 shadow-sm sm:text-sm"
+        className="w-56 mr-3 lg:w-[400px] rounded-md bg-violet-100 border-2 border-gray-200 lg:p-2 py-1 md:p-2 -mt-4 px-4 shadow-sm sm:text-sm"
       />
       <span className="absolute inset-y-0 right-0 pr-4 flex items-center">
         <Link to={`search/${searchQuery}`}>
@@ -156,10 +157,10 @@ const NavBar = () => {
     </div>
 
     <div className="navbar-end text-black items-center hidden md:flex">
-  <div className="text-white font-bold">
+  <div className=" font-bold">
     <h1 className="block md:hidden">Call Now</h1>
     <h1 className="hidden md:block">Call to Order Now</h1>
-    <h1 className="text-base  flex justify-start items-center md:text-base lg:text-base text-white">
+    <h1 className="text-base  flex justify-start items-center md:text-base lg:text-base ">
       <span className="text-base md:text-base lg:text-base mr-2 font-bold">
         <FaPhoneAlt />
       </span>
