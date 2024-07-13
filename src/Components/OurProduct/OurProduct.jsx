@@ -94,13 +94,13 @@ const OurProduct = () => {
 
     return (
         <div className="container mx-auto p-5">
-            <h2 className="text-3xl font-bold mb-6 text-center">Our Product</h2>
+            <h2 className="text-3xl font-bold mb-6 text-center">Our Beauty Products</h2>
             <div className="flex justify-center mb-6">
                 {categories.map(category => (
                     <button
                         key={category.key}
                         onClick={() => setActiveTab(category.key)}
-                        className={`px-4 py-2 mx-2 rounded-full ${activeTab === category.key ? 'bg-yellow-500 text-white' : 'bg-gray-200 text-gray-700'} transition-colors duration-300 text-xs sm:text-sm md:text-base`}
+                        className={`px-4 py-2 mx-2 rounded-full ${activeTab === category.key ? 'bg-yellow-500 text-black font-bold' : 'bg-gray-200 text-black font-bold'} transition-colors duration-300 text-xs sm:text-sm md:text-base`}
                     >
                         {category.name}
                     </button>
