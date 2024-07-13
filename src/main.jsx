@@ -40,6 +40,10 @@ import OrganicProduct from "./Components/OrganicProduct/OrganicProduct";
 
 import LatestNews from "./Components/LatestNews/LatestNews";
 import NewsDetail from "./Components/NewsDetail/NewsDetail";
+import BeautyProduct from "./Components/BeautyProduct/BeautyProduct";
+
+
+
 
 const router = createBrowserRouter([
   {
@@ -55,7 +59,7 @@ const router = createBrowserRouter([
         element:<Login></Login>
       },
       {
-        path:'/checkout',
+        path:'/checkout/:title/:price',
         element:<Checkout></Checkout>
       },
       {
@@ -75,6 +79,10 @@ const router = createBrowserRouter([
         element:<OrganicProduct></OrganicProduct>
       },
       {
+        path:'/beauty-product',
+        element:<BeautyProduct></BeautyProduct>
+      },
+      {
         path:'/product/:id',
         element:<ProductDetail></ProductDetail>
       },
@@ -86,6 +94,7 @@ const router = createBrowserRouter([
         path:'/news/:id',
         element:<NewsDetail></NewsDetail>
       },
+ 
       {
         path:'/myFavourite',
         element:<MyFavourite></MyFavourite>
