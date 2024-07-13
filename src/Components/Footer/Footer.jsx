@@ -18,7 +18,7 @@ const Footer = () => {
   }, [logo, setLogo]);
 
   return (
-    <footer className="bg-black text-white p-10">
+    <footer className="bg-green-600 text-white p-10">
       <div className="container mx-auto flex flex-col items-center mb-10">
         <div className="flex items-center w-full justify-center">
           <hr className="border-t-1 border-gray-600 flex-grow" />

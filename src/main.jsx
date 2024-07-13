@@ -35,6 +35,11 @@ import OrderSuccess from "./Components/OrderSuccess/OrderSuccess";
 import MyFavourite from "./Components/MyFavourite/MyFavourite";
 import Blog from "./Components/Blog/Blog";
 import Contact from "./Components/Contact/Contact";
+import ProductDetail from "./Components/ProductDetails/ProductDetails";
+import OrganicProduct from "./Components/OrganicProduct/OrganicProduct";
+
+import LatestNews from "./Components/LatestNews/LatestNews";
+import NewsDetail from "./Components/NewsDetail/NewsDetail";
 
 const router = createBrowserRouter([
   {
@@ -50,7 +55,7 @@ const router = createBrowserRouter([
         element:<Login></Login>
       },
       {
-        path:'/checkout/:title/:price',
+        path:'/checkout',
         element:<Checkout></Checkout>
       },
       {
@@ -64,6 +69,22 @@ const router = createBrowserRouter([
       {
         path:'/contact',
         element:<Contact></Contact>
+      },
+      {
+        path:'/',
+        element:<OrganicProduct></OrganicProduct>
+      },
+      {
+        path:'/product/:id',
+        element:<ProductDetail></ProductDetail>
+      },
+      {
+        path:'/',
+        element:<LatestNews></LatestNews>
+      },
+      {
+        path:'/news/:id',
+        element:<NewsDetail></NewsDetail>
       },
       {
         path:'/myFavourite',
