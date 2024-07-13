@@ -35,7 +35,7 @@ const ProductCard = ({ item, index }) => {
   // Function to handle adding a product to cart
   const handleCart = (id, title, price, short, image) => {
     const cartItem = { id, title, price, short, image };
-    let cart = localStorage.getItem("cart");
+    let cart = localStorage.getItem("shokhercart");
 
     if (!cart) {
       cart = [];
@@ -53,13 +53,13 @@ const ProductCard = ({ item, index }) => {
     }
 
     cart.push(cartItem);
-    localStorage.setItem("cart", JSON.stringify(cart));
+    localStorage.setItem("shokhercart", JSON.stringify(cart));
     navigate(location?.state ? location.state : "/myCart");
   };
 
   const handleFavourite = (id, title, price, short, image) => {
     const cartItem = { id, title, price, short, image };
-    let cart = localStorage.getItem("favourite");
+    let cart = localStorage.getItem("shokherfavourite");
 
     if (!cart) {
       cart = [];
@@ -77,65 +77,43 @@ const ProductCard = ({ item, index }) => {
     }
 
     cart.push(cartItem);
-    localStorage.setItem("favourite", JSON.stringify(cart));
+    localStorage.setItem("shokherfavourite", JSON.stringify(cart));
     navigate(location?.state ? location.state : "/myFavourite");
   };
 
   return (
     <div className="group p-0  md:p-0 lg:p-0">
-  <div className="border rounded-lg overflow-hidden shadow-lg flex flex-col justify-between lg:h-full relative">
-    <Link to={`/productDetails/${_id || id}`} key={_id} className="flex flex-col h-full">
-      <img
-        className="w-full h-28 lg:h-48 md:h-44 transform transition-transform duration-500 hover:scale-110"
-        src={image}
-        alt=''
-      />
-      {discount > 0 && (
-        <div className="rounded absolute ">
-          <button className="bg-red-500 text-white text-xs font-bold px-2 py-1">
-            {discount}%
-          </button>
-        </div>
-      )}
-
-      <div className="p-2 flex-grow flex flex-col">
-        <h2 className=" text-base hover:text-blue-700 text-black hover:font-bold lg:text-lg">{title}</h2>
-        <p className="text-red-300 text-base lg:text-lg flex justify-between font-medium">
-          <span className="text-red-600 hover:text-blue-600 ">৳  {price}</span>{" "}
-          {discount > 0 && (
-            <span className="line-through text-gray-500">৳ 
-              {parseFloat(price) + (price * discount) / 100}
-            </span>
-          )}
-        </p>
-      </div>
-      </Link>
-      {/* hover effect */}
-      <div className="absolute top-2 right-2 flex flex-col space-y-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-       
-        <Link to={`/productDetails/${_id || id}`}>
-        <button  className="bg-white rounded-full p-2 shadow-lg">
-          <FaEye className="text-gray-800" />
-        </button>
-        </Link>
-        <button onClick={() => handleCart(_id, title, price, short, image)} className="bg-white rounded-full p-2 shadow-lg">
-          <FaCartPlus className="text-gray-800" />
-        </button>
-        <button onClick={() => handleFavourite(_id, title, price, short, image)} className="bg-white rounded-full p-2 shadow-lg">
-          <FaHeart className="text-gray-800" />
-        </button>
-      </div>
-    
-
-    <div>
-      <button
-        onClick={() => handleCart(_id, title, price, short, image)}
-        className="bg-blue-500 hover:bg-blue-900 text-base lg:text-lg text-white py-2 rounded-b w-full"
-      >
-        অর্ডার করুন
-      </button>
-    </div>
-  </div>
+ 
+                <div key={index} className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+               
+                <div className="relative group">
+                <Link to={`/productDetails/${_id || id}`}>
+                   <img className="w-full h-48 object-cover transition duration-500 ease-in-out transform hover:scale-110" src={image} alt={title} />
+                </Link>
+                            
+                            <button onClick={() => handleFavourite(_id, title, price, short, image)} className="absolute top-2 right-2 bg-gray-100 text-gray-800 p-2 rounded-full hover:bg-yellow-500 hover:text-white transition-all duration-300">
+                                <i className="fas fa-heart"></i>
+                            </button>
+                        </div>
+            
+                        <div className="p-4">
+                          <Link to={`/productDetails/${_id || id}`}>
+                          <h3 className="text-xl font-semibold mb-2 hover:text-yellow-500 transition-all duration-300">{title}</h3>
+                          </Link>
+                           
+                            <div className="flex justify-between items-center">
+                            <Link to={`/productDetails/${_id || id}`}>
+                            <span className="text-yellow-500 font-bold">{price}</span>
+                            </Link>
+                              
+                                <button onClick={() => handleCart(_id, title, price, short, image)} className="bg-yellow-500 text-black font-bold py-2 px-4 rounded-full hover:text-white transition-all duration-300 flex items-center">
+                                    <i className="fas fa-shopping-cart mr-2"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+     
+  
 </div>
 
   );

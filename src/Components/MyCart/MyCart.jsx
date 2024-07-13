@@ -18,7 +18,7 @@ const MyCart = () => {
 
   useEffect(() => {
     // Retrieve cart items from localStorage
-    const storedCart = localStorage.getItem("cart");
+    const storedCart = localStorage.getItem("shokhercart");
     if (storedCart) {
       const parsedCart = JSON.parse(storedCart);
       // Initialize quantity for each item if not already present
@@ -37,13 +37,13 @@ const MyCart = () => {
         : item
     );
     setCartItems(updatedCartItems);
-    localStorage.setItem("cart", JSON.stringify(updatedCartItems));
+    localStorage.setItem("shokhercart", JSON.stringify(updatedCartItems));
   };
 
   const handleDelete = (id) => {
     const updatedCartItems = cartItems.filter((item) => item.id !== id);
     setCartItems(updatedCartItems);
-    localStorage.setItem("cart", JSON.stringify(updatedCartItems));
+    localStorage.setItem("shokhercart", JSON.stringify(updatedCartItems));
   };
 
   const handleDeliveryChange = (charge) => {

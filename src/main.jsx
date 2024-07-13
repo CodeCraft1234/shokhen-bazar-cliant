@@ -40,6 +40,7 @@ import OrganicProduct from "./Components/OrganicProduct/OrganicProduct";
 
 import LatestNews from "./Components/LatestNews/LatestNews";
 import NewsDetail from "./Components/NewsDetail/NewsDetail";
+import ProductDetails from "./Components/ProductDetailss/ProductsDetails";
 
 const router = createBrowserRouter([
   {
@@ -81,6 +82,11 @@ const router = createBrowserRouter([
       {
         path:'/',
         element:<LatestNews></LatestNews>
+      },
+      {
+        path:'/productDetails/:id',
+        element:<ProductDetails></ProductDetails>,
+        loader: ({ params }) => fetch(`http://localhost:5000/productDetails/${params.id}`)
       },
       {
         path:'/news/:id',

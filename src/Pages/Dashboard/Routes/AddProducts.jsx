@@ -186,7 +186,7 @@ const AddProduct = () => {
             {...register('category', { required: true })}
             className="mt-1 select select-bordered w-full bg-white border-black text-base font-medium text-gray-700"
           >
-            <option value="allPack">All Pack</option>
+            <option disabled value="allPack">All Pack</option>
             <option value="চুলের যত্ন">চুলের যত্ন</option>
             <option value="ত্বকের যত্ন">ত্বকের যত্ন</option>
             <option value="মাজুফল">মাজুফল</option>

@@ -6,6 +6,7 @@ import LatestNews from "../../Components/LatestNews/LatestNews";
 import OrganicProduct from "../../Components/OrganicProduct/OrganicProduct";
 import OurProduct from "../../Components/OurProduct/OurProduct";
 import PopularProduct from "../../Components/PopularProduct/PopularProduct";
+import Product from "../../Components/Products/Products";
 import Services from "../../Components/Services/Services";
 
 
@@ -15,6 +16,7 @@ const Home = () => {
             <Banner></Banner>
             <OrganicProduct></OrganicProduct>
             <Services></Services>
+            <Product></Product>
             <PopularProduct></PopularProduct>
             <OurProduct></OurProduct>
             <AlwaysOrganic></AlwaysOrganic>
