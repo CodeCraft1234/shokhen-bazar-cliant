@@ -80,37 +80,37 @@ const AllProduct = () => {
           className={`mr-2 mb-2 py-2 px-4 rounded-full hover:bg-red-700 focus:outline-none ${activeTab === "" ? 'bg-blue-500 text-white' : 'bg-green-600 text-white'}`}
           onClick={() => handleTabClick("")}
         >
-          All
+          All Pack
         </button>
         <button
-          className={`mr-2 mb-2 py-2 px-4 rounded-full hover:bg-red-700 focus:outline-none ${activeTab === "skincare" ? 'bg-blue-500 text-white' : 'bg-green-600 text-white'}`}
-          onClick={() => handleTabClick("skincare")}
+          className={`mr-2 mb-2 py-2 px-4 rounded-full hover:bg-red-700 focus:outline-none ${activeTab === "চুলের যত্ন" ? 'bg-blue-500 text-white' : 'bg-green-600 text-white'}`}
+          onClick={() => handleTabClick("চুলের যত্ন")}
         >
-          Skincare
+          চুলের যত্ন
         </button>
         <button
-          className={`mr-2 mb-2 py-2 px-4 rounded-full hover:bg-red-700 focus:outline-none ${activeTab === "makeup" ? 'bg-blue-500 text-white' : 'bg-green-600 text-white'}`}
-          onClick={() => handleTabClick("makeup")}
+          className={`mr-2 mb-2 py-2 px-4 rounded-full hover:bg-red-700 focus:outline-none ${activeTab === "ত্বকের যত্ন" ? 'bg-blue-500 text-white' : 'bg-green-600 text-white'}`}
+          onClick={() => handleTabClick("ত্বকের যত্ন")}
         >
-          Makeup
+          ত্বকের যত্ন
         </button>
         <button
-          className={`mr-2 mb-2 py-2 px-4 rounded-full hover:bg-red-700 focus:outline-none ${activeTab === "fragrance" ? 'bg-blue-500 text-white' : 'bg-green-600 text-white'}`}
-          onClick={() => handleTabClick("fragrance")}
+          className={`mr-2 mb-2 py-2 px-4 rounded-full hover:bg-red-700 focus:outline-none ${activeTab === "মাজুফল" ? 'bg-blue-500 text-white' : 'bg-green-600 text-white'}`}
+          onClick={() => handleTabClick("মাজুফল")}
         >
-          Fragrance
+          মাজুফল
         </button>
         <button
-          className={`mr-2 mb-2 py-2 px-4 rounded-full hover:bg-red-700 focus:outline-none ${activeTab === "haircare" ? 'bg-blue-500 text-white' : 'bg-green-600 text-white'}`}
-          onClick={() => handleTabClick("haircare")}
+          className={`mr-2 mb-2 py-2 px-4 rounded-full hover:bg-red-700 focus:outline-none ${activeTab === "মুখের যত্ন" ? 'bg-blue-500 text-white' : 'bg-green-600 text-white'}`}
+          onClick={() => handleTabClick("মুখের যত্ন")}
         >
-          Haircare
+          মুখের যত্ন
         </button>
         <button
-          className={`py-2 mb-2 px-4 rounded-full hover:bg-red-700 focus:outline-none ${activeTab === "nailcare" ? 'bg-blue-500 text-white' : 'bg-green-600 text-white'}`}
-          onClick={() => handleTabClick("nailcare")}
+          className={`py-2 mb-2 px-4 rounded-full hover:bg-red-700 focus:outline-none ${activeTab === "লিপবাম" ? 'bg-blue-500 text-white' : 'bg-green-600 text-white'}`}
+          onClick={() => handleTabClick("লিপবাম")}
         >
-          Nail Care
+          লিপবাম
         </button>
       </div>
       <div className="flex flex-col sm:flex-row justify-between items-center mb-2 w-full sm:w-auto">
