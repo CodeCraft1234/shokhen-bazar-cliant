@@ -11,7 +11,7 @@ const UpdateProducts = () => {
   const image_hosting_key = "6fbc3358bbb1a92b78e2dee0f5ca1b94";
   const image_hosting_api = `https://api.imgbb.com/1/upload?key=${image_hosting_key}`;
   const AxiosPublic = useAxiosPublic();
-  const [currentTime, setCurrentTime] = useState(new Date()); 
+  const [currentTime, setCurrentTime] = useState(new Date());
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -22,7 +22,7 @@ const UpdateProducts = () => {
 
   const onSubmit = async (data) => {
     let imageUrl = item.image; // Use the existing image URL as the default
-  
+
     // Check if a new image is uploaded
     if (data.image && data.image[0]) {
       const formData = new FormData();
@@ -41,7 +41,7 @@ const UpdateProducts = () => {
         return;
       }
     }
-  
+
     const { title, short, price, category, brand, discount } = data;
     const body = {
       title,
@@ -53,10 +53,10 @@ const UpdateProducts = () => {
       brand,
       discount: discount || 0, // Set discount to 0 if not provided
     };
-  
+
     // Log the body to verify the data
     console.log("Request body:", body);
-  
+
     try {
       await AxiosPublic.patch(`/products/${item._id}`, body);
       Swal.fire({
@@ -72,15 +72,14 @@ const UpdateProducts = () => {
       });
     }
   };
-  
 
   return (
-    <div className="  px-4 ">
+    <div className="px-4">
       <Helmet>
-              <title> বিশ্বস্ত-বাজার | UpdateProducts</title>
-              <link rel="canonical" href="https://www.tacobell.com/" />
-               </Helmet>
-      <div className="text-center ">
+        <title> বিশ্বস্ত-বাজার | UpdateProducts</title>
+        <link rel="canonical" href="https://www.tacobell.com/" />
+      </Helmet>
+      <div className="text-center">
         <h2 className="text-xl font-bold py-5 text-pink-600">Update {item.title}</h2>
       </div>
 
@@ -91,7 +90,7 @@ const UpdateProducts = () => {
             <input
               {...register("title", { required: "Title is required" })}
               type="text"
-              defaultValue={item.title}
+              defaultValue={item?.title}
               placeholder="Enter product title"
               className="mt-1 input input-bordered bg-white border-black w-full text-base font-medium text-gray-700"
             />
@@ -112,45 +111,44 @@ const UpdateProducts = () => {
           <div>
             <label className="block text-sm font-medium text-gray-700">Price</label>
             <input
-              {...register("price")}
+              {...register("price", { required: "Price is required" })}
               type="number"
-           
-              defaultValue={item.price}
+              defaultValue={item?.price}
               placeholder="Enter product price"
               className="mt-1 input input-bordered w-full bg-white border-black text-base font-medium text-gray-700"
             />
+            {errors.price && <span className="text-red-500 text-sm">{errors.price.message}</span>}
           </div>
+
           <div>
             <label className="block text-sm font-medium text-gray-700">Discount <span className='text-red-400'>(Optional)</span></label>
             <input
               {...register("discount")}
               type="number"
-             
-              defaultValue={item.discount}
+              defaultValue={item?.discount}
               placeholder="Enter discount percentage"
               className="mt-1 input input-bordered w-full bg-white border-black text-base font-medium text-gray-700"
             />
           </div>
+
           <div>
             <label className="block text-sm font-medium text-gray-700">Brand</label>
             <input
-              {...register("brand" )}
+              {...register("brand", { required: "Brand is required" })}
               type="text"
-              defaultValue={item.brand}
+              defaultValue={item?.brand}
               placeholder="Enter product brand"
               className="mt-1 input input-bordered w-full bg-white border-black text-base font-medium text-gray-700"
             />
-           
+            {errors.brand && <span className="text-red-500 text-sm">{errors.brand.message}</span>}
           </div>
-
-
         </div>
 
         <div>
           <label className="block text-sm font-medium text-gray-700">Category</label>
           <select
-            {...register("category")}
-            defaultValue={item.category}
+            {...register("category", { required: "Category is required" })}
+            defaultValue={item?.category}
             className="mt-1 select select-bordered w-full bg-white border-black text-base font-medium text-gray-700"
           >
             <option value="allPack">All Pack</option>
@@ -160,17 +158,19 @@ const UpdateProducts = () => {
             <option value="মুখের যত্ন">মুখের যত্ন</option>
             <option value="লিপবাম">লিপবাম</option>
           </select>
+          {errors.category && <span className="text-red-500 text-sm">{errors.category.message}</span>}
         </div>
 
         <div>
           <label className="block text-sm font-medium text-gray-700">Description</label>
           <input
-            {...register("short")}
+            {...register("short", { required: "Description is required" })}
             type="text"
-            defaultValue={item.short}
+            defaultValue={item?.short} 
             placeholder="Enter a short description"
             className="mt-1 input input-bordered w-full bg-white border-black text-base font-medium text-gray-700"
           />
+          {errors.short && <span className="text-red-500 text-sm">{errors.short.message}</span>}
         </div>
 
         <div>
