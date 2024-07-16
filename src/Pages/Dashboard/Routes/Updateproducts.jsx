@@ -153,11 +153,12 @@ const UpdateProducts = () => {
             defaultValue={item.category}
             className="mt-1 select select-bordered w-full bg-white border-black text-base font-medium text-gray-700"
           >
-            <option value="skincare">Skincare</option>
-            <option value="makeup">Makeup</option>
-            <option value="fragrance">Fragrance</option>
-            <option value="haircare">Haircare</option>
-            <option value="nailcare">Nail Care</option>
+            <option value="allPack">All Pack</option>
+            <option value="চুলের যত্ন">চুলের যত্ন</option>
+            <option value="ত্বকের যত্ন">ত্বকের যত্ন</option>
+            <option value="মাজুফল">মাজুফল</option>
+            <option value="মুখের যত্ন">মুখের যত্ন</option>
+            <option value="লিপবাম">লিপবাম</option>
           </select>
         </div>
 
