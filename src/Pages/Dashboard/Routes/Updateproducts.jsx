@@ -76,7 +76,7 @@ const UpdateProducts = () => {
   return (
     <div className="px-4">
       <Helmet>
-        <title> বিশ্বস্ত-বাজার | UpdateProducts</title>
+        <title> Shokher Bazar | UpdateProducts</title>
         <link rel="canonical" href="https://www.tacobell.com/" />
       </Helmet>
       <div className="text-center">

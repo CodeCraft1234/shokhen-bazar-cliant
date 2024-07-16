@@ -67,7 +67,7 @@ const AllProduct = () => {
   return (
   <div className="py-3 container mx-auto px-4">
   <Helmet>
-    <title>বিশ্বস্ত-বাজার | AllProducts</title>
+    <title>Shokher Bazar| AllProducts</title>
     <link rel="canonical" href="https://www.tacobell.com/" />
   </Helmet>
   <h2 className="text-3xl font-bold mb-6 text-center text-black">
@@ -131,11 +131,13 @@ const AllProduct = () => {
         className="border rounded-lg overflow-hidden shadow-lg flex flex-col justify-between relative"
       >
  <Link className="flex flex-col h-full">
+ <Link to={`/productDetails/${product._id || product.id}`} className="flex flex-col h-full">
       <img
         className="w-full h-28 lg:h-48 md:h-44 transform transition-transform duration-500 hover:scale-110"
         src={product.image}
         alt=''
       />
+      </Link>
       {product.discount > 0 && (
         <div className="rounded absolute ">
           <button className="bg-red-500 text-white text-xs font-bold px-2 py-1">
@@ -145,7 +147,9 @@ const AllProduct = () => {
       )}
 
       <div className="p-2 flex-grow flex flex-col">
+      <Link to={`/productDetails/${product._id || product.id}`} className="flex flex-col h-full">
         <h2 className=" text-base hover:text-blue-700 text-black hover:font-bold lg:text-lg">{product.title}</h2>
+        </Link>
         <p className="text-red-300 text-base lg:text-lg flex justify-between font-medium">
           <span className="text-red-600 hover:text-blue-600 ">৳  {product.price}</span>{" "}
           {product.discount > 0 && (

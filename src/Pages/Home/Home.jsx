@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import AlwaysOrganic from "../../Components/AlwaysOrganic/AlwaysOrganic";
 import Banner from "../../Components/Banner/Banner";
 import ClientReview from "../../Components/ClientReview/ClientReview";
@@ -12,6 +13,10 @@ import Services from "../../Components/Services/Services";
 const Home = () => {
     return (
         <div>
+             <Helmet>
+        <title>Shokher Bazar | Home</title>
+        <link rel="canonical" href="https://www.tacobell.com/" />
+      </Helmet>
             <Banner></Banner>
             <OrganicProduct></OrganicProduct>
             <Services></Services>

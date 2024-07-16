@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Dialog } from '@headlessui/react';
 import { Link, useNavigate } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 
 const categories = [
     { name: 'All Pack', key: 'all' },
@@ -21,7 +22,6 @@ const truncateText = (text, limit) => {
 };
 
 const OurProduct = () => {
-    
     const [products, setProducts] = useState([]);
     const [activeTab, setActiveTab] = useState('all');
     const [loading, setLoading] = useState(true);
@@ -65,29 +65,29 @@ const OurProduct = () => {
 
     const navigate = useNavigate();
 
-    const handleFavourite = (id, title, price, short, image) => {
-        const cartItem = { id, title, price, short, image };
+    const handleFavourite = (product) => {
+        const cartItem = { id: product.id, title: product.title, price: product.price, short: product.short, image: product.image, _id: product._id };
         let cart = localStorage.getItem("favourite");
-    
+
         if (!cart) {
-          cart = [];
-        } else {
-          try {
-            cart = JSON.parse(cart);
-          } catch (error) {
-            console.error("Error parsing cart from localStorage:", error);
             cart = [];
-          }
+        } else {
+            try {
+                cart = JSON.parse(cart);
+            } catch (error) {
+                console.error("Error parsing cart from localStorage:", error);
+                cart = [];
+            }
         }
-    
+
         if (!Array.isArray(cart)) {
-          cart = [];
+            cart = [];
         }
-    
+
         cart.push(cartItem);
         localStorage.setItem("favourite", JSON.stringify(cart));
-        navigate(location?.state ? location.state : "/myFavourite");
-      };
+        navigate("/myFavourite");
+    };
 
     if (loading) {
         return <div className="text-center mt-20">Loading...</div>;
@@ -95,6 +95,10 @@ const OurProduct = () => {
 
     return (
         <div className="container mx-auto p-5">
+            <Helmet>
+                <title>Shokher Bazar | Product</title>
+                <link rel="canonical" href="https://www.tacobell.com/" />
+            </Helmet>
             <h2 className="text-3xl font-bold mb-6 text-center">Our Beauty Products</h2>
             <div className="flex justify-center mb-6">
                 {categories.map(category => (
@@ -114,8 +118,10 @@ const OurProduct = () => {
                     {filteredProducts.map(product => (
                         <div key={product.id} className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
                             <div className="relative group">
-                                <img className="w-full h-48 object-cover transition duration-500 ease-in-out transform hover:scale-110" src={product.image} alt={product.title} />
-                                <button onClick={() => handleFavourite(_id, title, price, short, image)} className="absolute top-2 right-2 bg-gray-100 text-gray-800 p-2 rounded-full hover:bg-yellow-500 hover:text-white transition-all duration-300">
+                                <Link to={`/productDetails/${product._id || product.id}`}>
+                                    <img className="w-full h-48 object-cover transition duration-500 ease-in-out transform hover:scale-110" src={product.image} alt={product.title} />
+                                </Link>
+                                <button onClick={() => handleFavourite(product)} className="absolute top-2 right-2 bg-gray-100 text-gray-800 p-2 rounded-full hover:bg-yellow-500 hover:text-white transition-all duration-300">
                                     <i className="fas fa-heart"></i>
                                 </button>
                             </div>
@@ -148,9 +154,13 @@ const OurProduct = () => {
                         ) : (
                             cart.map((item, index) => (
                                 <div key={index} className="flex items-center mb-4">
-                                    <img className="w-16 h-16 rounded-full object-cover mr-4" src={item.image} alt={item.title} />
+                                    <Link to={`/productDetails/${item._id || item.id}`} className="flex flex-col h-full">
+                                        <img className="w-16 h-16 rounded-full object-cover mr-4" src={item.image} alt={item.title} />
+                                    </Link>
                                     <div className="flex-grow">
-                                        <h4 className="font-semibold">{item.title}</h4>
+                                    <Link to={`/productDetails/${item._id || item._id}`} className="flex flex-col h-full">
+                                        <button className="font-semibold">{item.title}</button>
+                                        </Link>
                                         <p className="text-gray-600">{item.price}</p>
                                     </div>
                                     <button onClick={() => removeFromCart(item.id)} className="text-red-500 hover:text-red-700">
@@ -165,7 +175,7 @@ const OurProduct = () => {
                         <span className="text-yellow-500 font-bold">{calculateSubtotal().toFixed(2)}৳</span>
                     </div>
                     <div className="p-4 flex justify-between">
-                        <Link to="/checkout" className="bg-yellow-500 text-black font-bold py-2 px-4 rounded-full hover:text-white transition-all duration-300">
+                        <Link to="/myCart" className="bg-yellow-500 text-black font-bold py-2 px-4 rounded-full hover:text-white transition-all duration-300">
                             CHECKOUT
                         </Link>
                         <Link to="/myCart" className="bg-gray-200 text-gray-700 font-bold py-2 px-4 rounded-full hover:bg-gray-300 transition-all duration-300">

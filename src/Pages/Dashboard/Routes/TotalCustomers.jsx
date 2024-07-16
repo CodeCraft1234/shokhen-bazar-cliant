@@ -23,7 +23,7 @@ const TotalCustomers = () => {
     return (
         <div className=" py-4 mx-4 text-black  ">
             <Helmet>
-        <title>বিশ্বস্ত-বাজার | TotalCustomers</title>
+        <title>Shokher Bazar | TotalCustomers</title>
         <link rel="canonical" href="https://www.example.com/" />
       </Helmet>
             <h2 className="text-3xl font-bold mb-6 text-center text-black">
