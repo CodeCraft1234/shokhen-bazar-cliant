@@ -23,7 +23,7 @@ const backgroundColors = [
 
 const Banner = () => {
     return (
-        <div className="mt-16 flex flex-wrap justify-center bg-green-600 p-4 overflow-hidden">
+        <div className="mt-24 flex flex-wrap justify-center bg-green-600 p-4 overflow-hidden">
             {products.map((product, index) => (
                 <div
                     key={product.id}

@@ -5,10 +5,11 @@ import { Link, useNavigate } from 'react-router-dom';
 
 const categories = [
     { name: 'All Pack', key: 'all' },
-    { name: 'চুলের মঝুর', key: 'hair oil' },
-    { name: 'মুখের মঝুর', key: 'face pack' },
-    { name: 'মাঝুল', key: 'tan remove' },
-    { name: 'লিপবাম', key: 'lip balm' },
+    { name: 'চুলের যত্ন', key: 'চুলের যত্ন' },
+    { name: 'ত্বকের যত্ন', key: 'ত্বকের যত্ন' },
+    { name: 'মাজুফল', key: 'মাজুফল' },
+    { name: 'মুখের যত্ন', key: 'মুখের যত্ন' },
+    { name: 'লিপবাম', key: 'লিপবাম' },
 ];
 
 const truncateText = (text, limit) => {
