@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Helmet } from "react-helmet-async";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -26,6 +27,10 @@ const Contact = () => {
 
   return (
     <div className="mt-28 p-4">
+       <Helmet>
+        <title>Shokher Bazar | Contact</title>
+        <link rel="canonical" href="https://www.tacobell.com/" />
+      </Helmet>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
         <div>
           <h2 className="text-2xl mb-4">Call us or visit place</h2>

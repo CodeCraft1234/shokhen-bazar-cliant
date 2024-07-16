@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 const PopularProduct = () => {
     const [products, setProducts] = useState([]);
@@ -38,7 +39,9 @@ const PopularProduct = () => {
                 {products.map((product, index) => (
                     <div key={index} className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
                         <div className="relative group">
+                        <Link to={`/productDetails/${product._id || product.id}`} className="flex flex-col h-full">
                             <img className="w-full h-48 object-cover transition duration-500 ease-in-out transform hover:scale-110" src={product.image} alt={product.title} />
+                            </Link>
                             <button className="absolute top-2 right-2 bg-gray-100 text-gray-800 p-2 rounded-full hover:bg-yellow-500 hover:text-white transition-all duration-300">
                                 <i className="fas fa-heart"></i>
                             </button>

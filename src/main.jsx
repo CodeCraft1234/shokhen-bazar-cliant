@@ -41,7 +41,8 @@ import OrganicProduct from "./Components/OrganicProduct/OrganicProduct";
 import LatestNews from "./Components/LatestNews/LatestNews";
 import NewsDetail from "./Components/NewsDetail/NewsDetail";
 import BeautyProduct from "./Components/BeautyProduct/BeautyProduct";
-
+import ProductDetails from "./Components/ProductDetails/ProductDetails";
+import MyOrders from "./Pages/MyOrders";
 
 
 
@@ -100,9 +101,19 @@ const router = createBrowserRouter([
         element:<MyFavourite></MyFavourite>
       },
       {
+        path:'/myOrders',
+        element:<MyOrders></MyOrders>
+      },
+      {
         path:'/order-success',
         element: <OrderSuccess></OrderSuccess>
       },
+      {
+        path:'/productDetails/:id',
+        element:<ProductDetails></ProductDetails>,
+        loader: ({ params }) => fetch(`http://localhost:5000/productDetails/${params.id}`)
+      },
+
       {
         path:'dashboard',
         element:<DashboardRoot></DashboardRoot>,
@@ -136,6 +147,7 @@ const router = createBrowserRouter([
             path:'/dashboard/admin/allProducts',
             element:<AllProduct></AllProduct>
           },
+          
           {
             path:'/dashboard/admin/updateProducts/:id',
             element:<UpdateProducts></UpdateProducts>,

@@ -38,10 +38,10 @@ const AddAddress = () => {
 
     return (
         <div className="text-white  flex items-center mt-3 justify-center overflow-x-hidden">
-        <Helmet>
+        {/* <Helmet>
               <title> বিশ্বস্ত-বাজার | Settings</title>
               <link rel="canonical" href="https://www.tacobell.com/" />
-               </Helmet>
+               </Helmet> */}
         <div className="bg-white p-8 rounded-lg shadow-xl w-full ">
           <h2 className="text-2xl font-bold mb-4 text-center text-black">
             Company Details
