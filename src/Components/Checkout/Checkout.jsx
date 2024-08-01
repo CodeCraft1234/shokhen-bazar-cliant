@@ -53,7 +53,7 @@ const Checkout = () => {
   };
 
   return (
-    <div className="p-6 mt-36 grid gap-6 md:grid-cols-2 mt-96">
+    <div className="p-6 grid gap-6 md:grid-cols-2 mt-96">
       <div className="bg-white p-6 rounded-lg shadow-lg">
         <h2 className="text-lg font-medium mb-4">
           অর্ডারটি কনফার্ম করতে আপনার নাম, ঠিকানা, মোবাইল নাম্বার, দিয়ে{" "}
