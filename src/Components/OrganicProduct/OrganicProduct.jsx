@@ -73,3 +73,4 @@ const OrganicProduct = () => {
 };
 
 export default OrganicProduct;
+
