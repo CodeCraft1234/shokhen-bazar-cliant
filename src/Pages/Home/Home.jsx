@@ -12,13 +12,11 @@ import Services from "../../Components/Services/Services";
 
 const Home = () => {
     return (
-        <div>
+        <div className="mx-10">
             <Banner></Banner>
             <OrganicProduct></OrganicProduct>
             <Services></Services>
             <Product></Product>
-            <PopularProduct></PopularProduct>
-            <OurProduct></OurProduct>
             <AlwaysOrganic></AlwaysOrganic>
             <ClientReview></ClientReview>
             <LatestNews></LatestNews>

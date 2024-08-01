@@ -105,7 +105,7 @@ useEffect(() => {
       submissionDate, // Just the date without time
     };
     console.log(body)
-    fetch("http://localhost:5000/feedbacks", {
+    fetch("https://shokher-bazar.vercel.app/feedbacks", {
       method: "POST",
       headers: {
         "content-type": "application/json",

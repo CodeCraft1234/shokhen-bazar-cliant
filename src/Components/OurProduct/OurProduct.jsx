@@ -30,7 +30,7 @@ const OurProduct = () => {
     useEffect(() => {
         const fetchProducts = async () => {
             try {
-                const response = await axios.get('http://localhost:5000/products');
+                const response = await axios.get('https://shokher-bazar.vercel.app/products');
                 setProducts(response.data);
                 setLoading(false);
             } catch (error) {

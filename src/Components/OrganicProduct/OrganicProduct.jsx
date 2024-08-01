@@ -16,7 +16,7 @@ const OrganicProduct = () => {
     };
 
     return (
-        <div className="mt-1 p-4 grid gap-4 lg:grid-cols-4">
+        <div className="mt-1 grid gap-4 lg:grid-cols-4">
             {/* Left side large image */}
             <div className="relative h-full lg:col-span-2">
                 <div className="relative w-full h-[420px]">

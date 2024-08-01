@@ -8,7 +8,7 @@ const PopularProduct = () => {
     useEffect(() => {
         const fetchProducts = async () => {
             try {
-                const response = await axios.get('http://localhost:5000/products');
+                const response = await axios.get('https://shokher-bazar.vercel.app/products');
                 const allPackProducts = response.data.filter(product => product.category === 'allPack');
                 const firstTwoProducts = allPackProducts.slice(0, 2);
                 setProducts([...firstTwoProducts, ...firstTwoProducts]); // Repeat the first two products to make 4 cards

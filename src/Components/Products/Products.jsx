@@ -38,7 +38,7 @@ console.log(products);
       
       {/* Tabs for sorting */}
       <div className="mb-4 flex flex-wrap justify-between mx-auto items-center ">
-  <div className="grid  sm:ml-4 grid-cols-4  md:grid-cols-8 justify-center items-center  lg:grid-cols-8 gap-1">
+  <div className="grid  sm:ml-4 grid-cols-3 mx-auto  md:grid-cols-8 justify-center items-center  lg:grid-cols-8 gap-1">
     <button
       className={` mb-2 py-2 px-4 rounded-full  hover:bg-[#FF7701] focus:outline-none ${activeTab === "" ? 'bg-blue-500 text-white' : 'bg-green-600 text-white'}`}
       onClick={() => handleTabClick("")}
@@ -52,7 +52,7 @@ console.log(products);
     চুলের যত্ন
     </button>
     <button
-      className={` mb-2 py-2 px-4 rounded-full hover:bg-[#FF7701]0 focus:outline-none ${activeTab === "makeup" ? 'bg-blue-500 text-white' : 'bg-green-600 text-white'}`}
+     className={` mb-2 py-2 px-4 rounded-full hover:bg-[#FF7701] focus:outline-none ${activeTab === "fragrance" ? 'bg-blue-500 text-white' : 'bg-green-600 text-white'}`}
       onClick={() => handleTabClick("ত্বকের যত্ন")}
     >
      ত্বকের যত্ন
