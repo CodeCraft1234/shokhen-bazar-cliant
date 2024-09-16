@@ -2,13 +2,15 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Dialog } from '@headlessui/react';
 import { Link, useNavigate } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 
 const categories = [
     { name: 'All Pack', key: 'all' },
-    { name: 'চুলের মঝুর', key: 'hair oil' },
-    { name: 'মুখের মঝুর', key: 'face pack' },
-    { name: 'মাঝুল', key: 'tan remove' },
-    { name: 'লিপবাম', key: 'lip balm' },
+    { name: 'চুলের যত্ন', key: 'চুলের যত্ন' },
+    { name: 'ত্বকের যত্ন', key: 'ত্বকের যত্ন' },
+    { name: 'মাজুফল', key: 'মাজুফল' },
+    { name: 'মুখের যত্ন', key: 'মুখের যত্ন' },
+    { name: 'লিপবাম', key: 'লিপবাম' },
 ];
 
 const truncateText = (text, limit) => {
@@ -20,7 +22,6 @@ const truncateText = (text, limit) => {
 };
 
 const OurProduct = () => {
-    
     const [products, setProducts] = useState([]);
     const [activeTab, setActiveTab] = useState('all');
     const [loading, setLoading] = useState(true);
@@ -64,29 +65,29 @@ const OurProduct = () => {
 
     const navigate = useNavigate();
 
-    const handleFavourite = (id, title, price, short, image) => {
-        const cartItem = { id, title, price, short, image };
-        let cart = localStorage.getItem("favourite");
-    
+    const handleFavourite = (product) => {
+        const cartItem = { id: product.id, title: product.title, price: product.price, short: product.short, image: product.image, _id: product._id };
+        let cart = localStorage.getItem("shokherfavourite");
+
         if (!cart) {
-          cart = [];
-        } else {
-          try {
-            cart = JSON.parse(cart);
-          } catch (error) {
-            console.error("Error parsing cart from localStorage:", error);
             cart = [];
-          }
+        } else {
+            try {
+                cart = JSON.parse(cart);
+            } catch (error) {
+                console.error("Error parsing cart from localStorage:", error);
+                cart = [];
+            }
         }
-    
+
         if (!Array.isArray(cart)) {
-          cart = [];
+            cart = [];
         }
-    
+
         cart.push(cartItem);
-        localStorage.setItem("favourite", JSON.stringify(cart));
-        navigate(location?.state ? location.state : "/myFavourite");
-      };
+        localStorage.setItem("shokherfavourite", JSON.stringify(cart));
+        navigate("/myFavourite");
+    };
 
     if (loading) {
         return <div className="text-center mt-20">Loading...</div>;
@@ -94,13 +95,17 @@ const OurProduct = () => {
 
     return (
         <div className="container mx-auto p-5">
-            <h2 className="text-3xl font-bold mb-6 text-center">Our Product</h2>
+            <Helmet>
+                <title>Shokher Bazar | Product</title>
+                <link rel="canonical" href="https://www.tacobell.com/" />
+            </Helmet>
+            <h2 className="text-2xl text-black font-bold mb-6 text-center">Our Beauty Products</h2>
             <div className="flex justify-center mb-6">
                 {categories.map(category => (
                     <button
                         key={category.key}
                         onClick={() => setActiveTab(category.key)}
-                        className={`px-4 py-2 mx-2 rounded-full ${activeTab === category.key ? 'bg-yellow-500 text-white' : 'bg-gray-200 text-gray-700'} transition-colors duration-300 text-xs sm:text-sm md:text-base`}
+                        className={`px-4 py-2 mx-2 rounded-full ${activeTab === category.key ? 'bg-yellow-500 text-black font-bold' : 'bg-gray-200 text-black font-bold'} transition-colors duration-300 text-xs sm:text-sm md:text-base`}
                     >
                         {category.name}
                     </button>
@@ -113,8 +118,10 @@ const OurProduct = () => {
                     {filteredProducts.map(product => (
                         <div key={product.id} className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
                             <div className="relative group">
-                                <img className="w-full h-48 object-cover transition duration-500 ease-in-out transform hover:scale-110" src={product.image} alt={product.title} />
-                                <button onClick={() => handleFavourite(_id, title, price, short, image)} className="absolute top-2 right-2 bg-gray-100 text-gray-800 p-2 rounded-full hover:bg-yellow-500 hover:text-white transition-all duration-300">
+                                <Link to={`/productDetails/${product._id || product.id}`}>
+                                    <img className="w-full h-48 object-cover transition duration-500 ease-in-out transform hover:scale-110" src={product.image} alt={product.title} />
+                                </Link>
+                                <button onClick={() => handleFavourite(product)} className="absolute top-2 right-2 bg-gray-100 text-gray-800 p-2 rounded-full hover:bg-yellow-500 hover:text-white transition-all duration-300">
                                     <i className="fas fa-heart"></i>
                                 </button>
                             </div>
@@ -134,7 +141,7 @@ const OurProduct = () => {
             )}
 
             <Dialog open={isModalOpen} onClose={() => setIsModalOpen(false)} className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black bg-opacity-50">
-                <div className="bg-white rounded-lg overflow-hidden w-full max-w-md mx-auto">
+                <div className="bg-white text-black rounded-lg overflow-hidden w-full max-w-md mx-auto">
                     <div className="p-4 flex justify-between items-center border-b">
                         <h3 className="text-xl font-bold">Shopping Cart</h3>
                         <button onClick={() => setIsModalOpen(false)} className="text-gray-600 hover:text-gray-900">
@@ -147,9 +154,13 @@ const OurProduct = () => {
                         ) : (
                             cart.map((item, index) => (
                                 <div key={index} className="flex items-center mb-4">
-                                    <img className="w-16 h-16 rounded-full object-cover mr-4" src={item.image} alt={item.title} />
+                                    <Link to={`/productDetails/${item._id || item.id}`} className="flex flex-col h-full">
+                                        <img className="w-16 h-16 rounded-full object-cover mr-4" src={item.image} alt={item.title} />
+                                    </Link>
                                     <div className="flex-grow">
-                                        <h4 className="font-semibold">{item.title}</h4>
+                                    <Link to={`/productDetails/${item._id || item._id}`} className="flex flex-col h-full">
+                                        <button className="font-semibold">{item.title}</button>
+                                        </Link>
                                         <p className="text-gray-600">{item.price}</p>
                                     </div>
                                     <button onClick={() => removeFromCart(item.id)} className="text-red-500 hover:text-red-700">
@@ -164,7 +175,7 @@ const OurProduct = () => {
                         <span className="text-yellow-500 font-bold">{calculateSubtotal().toFixed(2)}৳</span>
                     </div>
                     <div className="p-4 flex justify-between">
-                        <Link to="/checkout" className="bg-yellow-500 text-black font-bold py-2 px-4 rounded-full hover:text-white transition-all duration-300">
+                        <Link to="/myCart" className="bg-yellow-500 text-black font-bold py-2 px-4 rounded-full hover:text-white transition-all duration-300">
                             CHECKOUT
                         </Link>
                         <Link to="/myCart" className="bg-gray-200 text-gray-700 font-bold py-2 px-4 rounded-full hover:bg-gray-300 transition-all duration-300">

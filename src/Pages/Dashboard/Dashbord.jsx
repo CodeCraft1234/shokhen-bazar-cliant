@@ -15,7 +15,7 @@ const Dashboard = ({ showSidebar }) => {
           } md:block`}
         >
           <Helmet>
-        <title>বিশ্বস্ত-বাজার | Dashboard</title>
+        <title>Shokher Bazar| Dashboard</title>
         <link rel="canonical" href="https://www.example.com/" />
       </Helmet>
           <ul className="menu  text-center text-base">

@@ -25,7 +25,7 @@ const AllOrders = () => {
 
         if (result.isConfirmed) {
             try {
-                const response = await AxiosPublic.delete(`https://hirikbazar.vercel.app/orders/${orderId}`);
+                const response = await AxiosPublic.delete(`https://shokher-bazar.vercel.app/orders/${orderId}`);
                 console.log(response.data);
                 refetch();
                 toast.success('Order cancelled successfully');
@@ -42,7 +42,7 @@ const AllOrders = () => {
 
     const handleStatusChange = async (orderId, newStatus) => {
         try {
-            const response = await AxiosPublic.patch(`https://hirikbazar.vercel.app/orders/${orderId}`, { status: newStatus });
+            const response = await AxiosPublic.patch(`https://shokher-bazar.vercel.app/orders/${orderId}`, { status: newStatus });
             console.log(response.data);
             refetch();
             toast.success('Order status updated successfully');
@@ -82,7 +82,7 @@ const AllOrders = () => {
     return (
         <div className="py-3 pb-10 px-4">
             <Helmet>
-                <title>বিশ্বস্ত-বাজার | All Orders</title>
+                <title>Shokher Bazar| All Orders</title>
             </Helmet>
             <div className="flex flex-col sm:flex-row justify-between items-center mb-2 w-full sm:w-auto mt-6">
                 <input

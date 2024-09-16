@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 import { useNavigate } from 'react-router-dom';
 
 const Blog = () => {
@@ -37,7 +38,11 @@ const Blog = () => {
 
     return (
         <div className="container mx-auto mt-28 p-4">
-            <h1 className="text-3xl text-center font-bold mb-8">Our Blog</h1>
+             <Helmet>
+        <title>Shokher Bazar | Blog</title>
+        <link rel="canonical" href="https://www.tacobell.com/" />
+      </Helmet>
+            <h1 className="text-3xl text-center text-black mt-2 font-bold mb-2">Our Blog</h1>
             <div className="flex flex-wrap">
                 {/* Left Sidebar */}
                 <div className="w-full lg:w-1/4 p-4">

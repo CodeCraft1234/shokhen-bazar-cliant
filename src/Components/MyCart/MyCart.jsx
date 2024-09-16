@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FaTrashAlt } from "react-icons/fa"; // Importing the delete icon
-import useAxiosPublic from "../../Axios/useAxiosPublic";
+
 import Swal from "sweetalert2";
 import { Helmet } from "react-helmet-async";
+import useAxiosPublic from "../../Axios/useAxiosPublic";
 
 const MyCart = () => {
   const [cartItems, setCartItems] = useState([]);
@@ -125,9 +126,9 @@ const MyCart = () => {
   return (
     <div className="  mx-8 ">
        <Helmet>
-                <title>Shokher Bazar | My Cart</title>
-                <link rel="canonical" href="https://www.tacobell.com/" />
-            </Helmet>
+              <title> বিশ্বস্ত-বাজার | MyCart</title>
+              <link rel="canonical" href="https://www.tacobell.com/" />
+               </Helmet>
       {
         cartItems.length === 0 ? <div className="bg-white flex justify-center items-center p-6 min-h-screen rounded-lg shadow-lg text-center">
      <div>
@@ -140,8 +141,8 @@ const MyCart = () => {
      </div>
       </div> : <div className=" flex justify-center items-center    text-center">
 
-      <div className=" grid gap-5 md:grid-cols-2 mt-32">
-        <div className="bg-gray-100 p-6 ">
+      <div className=" grid gap-5 md:grid-cols-2  mt-32">
+        <div className="bg-gray-100 p-6 mx-4 rounded-lg ">
           <h2 className="text-lg text-black font-bold  mb-4">
             অর্ডারটি কনফার্ম করতে আপনার নাম, ঠিকানা, মোবাইল নাম্বার, দিয়ে{" "}
             <span className="text-red-600">অর্ডার কনফার্ম করুন </span>বাটনে ক্লিক

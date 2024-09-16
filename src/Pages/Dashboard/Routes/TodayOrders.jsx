@@ -44,7 +44,7 @@ const TodayOrders = () => {
 const AxiosPublic=useAxiosPublic()
     const handleStatusChange = async (orderId, newStatus) => {
         try {
-            const response = await AxiosPublic.patch(`https://hirikbazar.vercel.app/orders/${orderId}`, { status: newStatus });
+            const response = await AxiosPublic.patch(`https://shokher-bazar.vercel.app/orders/${orderId}`, { status: newStatus });
             console.log(response.data);
             refetch();
             toast.success('Order status updated successfully');

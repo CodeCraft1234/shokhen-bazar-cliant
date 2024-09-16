@@ -18,13 +18,13 @@ const Footer = () => {
   }, [logo, setLogo]);
 
   return (
-    <footer className="bg-green-600 text-white p-10">
+    <footer className="bg-green-600 px-28 text-white py-10">
       <div className="container mx-auto flex flex-col items-center mb-10">
         <div className="flex items-center w-full justify-center">
           <hr className="border-t-1 border-gray-600 flex-grow" />
           <Link to={"/"}>
             <img
-              className="h-10 w-16  sm:h-16 sm:w-16 md:h-14 md:w-14 lg:h-16 lg:w-32"
+              className="h-10 w-16  sm:h-16 sm:w-16 md:h-14 md:w-14 lg:h-24 lg:w-32"
               src={latestLogo?.photo}
               alt="Logo"
             />

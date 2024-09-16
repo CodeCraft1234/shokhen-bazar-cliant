@@ -67,7 +67,7 @@ const AllProduct = () => {
   return (
   <div className="py-3 container mx-auto px-4">
   <Helmet>
-    <title>বিশ্বস্ত-বাজার | AllProducts</title>
+    <title>Shokher Bazar| AllProducts</title>
     <link rel="canonical" href="https://www.tacobell.com/" />
   </Helmet>
   <h2 className="text-3xl font-bold mb-6 text-center text-black">
@@ -80,37 +80,37 @@ const AllProduct = () => {
           className={`mr-2 mb-2 py-2 px-4 rounded-full hover:bg-red-700 focus:outline-none ${activeTab === "" ? 'bg-blue-500 text-white' : 'bg-green-600 text-white'}`}
           onClick={() => handleTabClick("")}
         >
-          All
+          All Pack
         </button>
         <button
-          className={`mr-2 mb-2 py-2 px-4 rounded-full hover:bg-red-700 focus:outline-none ${activeTab === "skincare" ? 'bg-blue-500 text-white' : 'bg-green-600 text-white'}`}
-          onClick={() => handleTabClick("skincare")}
+          className={`mr-2 mb-2 py-2 px-4 rounded-full hover:bg-red-700 focus:outline-none ${activeTab === "চুলের যত্ন" ? 'bg-blue-500 text-white' : 'bg-green-600 text-white'}`}
+          onClick={() => handleTabClick("চুলের যত্ন")}
         >
-          Skincare
+          চুলের যত্ন
         </button>
         <button
-          className={`mr-2 mb-2 py-2 px-4 rounded-full hover:bg-red-700 focus:outline-none ${activeTab === "makeup" ? 'bg-blue-500 text-white' : 'bg-green-600 text-white'}`}
-          onClick={() => handleTabClick("makeup")}
+          className={`mr-2 mb-2 py-2 px-4 rounded-full hover:bg-red-700 focus:outline-none ${activeTab === "ত্বকের যত্ন" ? 'bg-blue-500 text-white' : 'bg-green-600 text-white'}`}
+          onClick={() => handleTabClick("ত্বকের যত্ন")}
         >
-          Makeup
+          ত্বকের যত্ন
         </button>
         <button
-          className={`mr-2 mb-2 py-2 px-4 rounded-full hover:bg-red-700 focus:outline-none ${activeTab === "fragrance" ? 'bg-blue-500 text-white' : 'bg-green-600 text-white'}`}
-          onClick={() => handleTabClick("fragrance")}
+          className={`mr-2 mb-2 py-2 px-4 rounded-full hover:bg-red-700 focus:outline-none ${activeTab === "মাজুফল" ? 'bg-blue-500 text-white' : 'bg-green-600 text-white'}`}
+          onClick={() => handleTabClick("মাজুফল")}
         >
-          Fragrance
+          মাজুফল
         </button>
         <button
-          className={`mr-2 mb-2 py-2 px-4 rounded-full hover:bg-red-700 focus:outline-none ${activeTab === "haircare" ? 'bg-blue-500 text-white' : 'bg-green-600 text-white'}`}
-          onClick={() => handleTabClick("haircare")}
+          className={`mr-2 mb-2 py-2 px-4 rounded-full hover:bg-red-700 focus:outline-none ${activeTab === "মুখের যত্ন" ? 'bg-blue-500 text-white' : 'bg-green-600 text-white'}`}
+          onClick={() => handleTabClick("মুখের যত্ন")}
         >
-          Haircare
+          মুখের যত্ন
         </button>
         <button
-          className={`py-2 mb-2 px-4 rounded-full hover:bg-red-700 focus:outline-none ${activeTab === "nailcare" ? 'bg-blue-500 text-white' : 'bg-green-600 text-white'}`}
-          onClick={() => handleTabClick("nailcare")}
+          className={`py-2 mb-2 px-4 rounded-full hover:bg-red-700 focus:outline-none ${activeTab === "লিপবাম" ? 'bg-blue-500 text-white' : 'bg-green-600 text-white'}`}
+          onClick={() => handleTabClick("লিপবাম")}
         >
-          Nail Care
+          লিপবাম
         </button>
       </div>
       <div className="flex flex-col sm:flex-row justify-between items-center mb-2 w-full sm:w-auto">
@@ -131,11 +131,13 @@ const AllProduct = () => {
         className="border rounded-lg overflow-hidden shadow-lg flex flex-col justify-between relative"
       >
  <Link className="flex flex-col h-full">
+ <Link to={`/productDetails/${product._id || product.id}`} className="flex flex-col h-full">
       <img
         className="w-full h-28 lg:h-48 md:h-44 transform transition-transform duration-500 hover:scale-110"
         src={product.image}
         alt=''
       />
+      </Link>
       {product.discount > 0 && (
         <div className="rounded absolute ">
           <button className="bg-red-500 text-white text-xs font-bold px-2 py-1">
@@ -145,7 +147,9 @@ const AllProduct = () => {
       )}
 
       <div className="p-2 flex-grow flex flex-col">
+      <Link to={`/productDetails/${product._id || product.id}`} className="flex flex-col h-full">
         <h2 className=" text-base hover:text-blue-700 text-black hover:font-bold lg:text-lg">{product.title}</h2>
+        </Link>
         <p className="text-red-300 text-base lg:text-lg flex justify-between font-medium">
           <span className="text-red-600 hover:text-blue-600 ">৳  {product.price}</span>{" "}
           {product.discount > 0 && (

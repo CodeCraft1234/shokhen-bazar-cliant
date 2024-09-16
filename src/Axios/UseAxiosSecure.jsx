@@ -5,7 +5,7 @@ import axios from "axios";
 
 
 export const AxiosSecure = axios.create({
-  baseURL: 'https://hirikbazar.vercel.app/',
+  baseURL: 'https://shokher-bazar.vercel.app/',
 });
 
 const UseAxiosSecure = () => {

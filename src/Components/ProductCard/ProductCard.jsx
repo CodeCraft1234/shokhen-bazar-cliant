@@ -98,7 +98,7 @@ const ProductCard = ({ item, index }) => {
             
                         <div className="p-4">
                           <Link to={`/productDetails/${_id || id}`}>
-                          <h3 className="text-xl font-semibold mb-2 hover:text-yellow-500 transition-all duration-300">{title}</h3>
+                          <h3 className="text-lg font-semibold mb-2 text-black hover:text-yellow-500 transition-all duration-300">{title}</h3>
                           </Link>
                            
                             <div className="flex justify-between items-center">

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Helmet } from "react-helmet-async";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -25,13 +26,18 @@ const Contact = () => {
   };
 
   return (
-    <div className="mt-28 p-4">
+    <div className="mt-28 text-black px-4 lg:px-8 py-8">
+      <Helmet>
+        <title>Shokher Bazar | Contact</title>
+        <link rel="canonical" href="https://www.tacobell.com/" />
+      </Helmet>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        {/* Contact Info Section */}
         <div>
-          <h2 className="text-2xl mb-4">Call us or visit place</h2>
+          <h2 className="text-2xl font-semibold mb-4">Call us or visit our place</h2>
           <p className="mb-2">
             <span className="font-bold">Phone: </span>
-            <a href="tel:01401-026552">01401-026552</a>
+            <a href="tel:01401-026552" className="text-yellow-500">01401-026552</a>
           </p>
           <p className="mb-2">
             <span className="font-bold">Address: </span>
@@ -39,7 +45,9 @@ const Contact = () => {
           </p>
           <p className="mb-2">
             <span className="font-bold">Email: </span>
-            <a href="mailto:pokharelgit07@gmail.com">pokharelgit07@gmail.com</a>
+            <a href="mailto:pokharelgit07@gmail.com" className="text-yellow-500">
+              pokharelgit07@gmail.com
+            </a>
           </p>
           <div className="mt-4">
             <iframe
@@ -53,8 +61,9 @@ const Contact = () => {
             ></iframe>
           </div>
         </div>
+        {/* Contact Form Section */}
         <div>
-          <h2 className="text-2xl mb-4">Send us a message</h2>
+          <h2 className="text-2xl font-semibold mb-4">Send us a message</h2>
           <form onSubmit={handleSubmit}>
             <div className="mb-4">
               <label
@@ -69,7 +78,8 @@ const Contact = () => {
                 id="name"
                 value={formData.name}
                 onChange={handleChange}
-                className="mt-1 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+                placeholder="Your name..."
+                className="mt-1 block w-full p-2 bg-white border border-gray-400 shadow-sm sm:text-sm rounded-md"
                 required
               />
             </div>
@@ -86,7 +96,8 @@ const Contact = () => {
                 id="email"
                 value={formData.email}
                 onChange={handleChange}
-                className="mt-1 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+                placeholder="Type your email..."
+                className="mt-1 block w-full p-2 bg-white border border-gray-400 shadow-sm sm:text-sm rounded-md"
                 required
               />
             </div>
@@ -103,7 +114,8 @@ const Contact = () => {
                 id="subject"
                 value={formData.subject}
                 onChange={handleChange}
-                className="mt-1 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+                placeholder="Subject..."
+                className="mt-1 block w-full p-2 bg-white border border-gray-400 shadow-sm sm:text-sm rounded-md"
                 required
               />
             </div>
@@ -120,13 +132,14 @@ const Contact = () => {
                 rows="4"
                 value={formData.comment}
                 onChange={handleChange}
-                className="mt-1 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+                placeholder="Type your comment..."
+                className="mt-1 block w-full p-2 bg-white border border-gray-400 shadow-sm sm:text-sm rounded-md"
                 required
               ></textarea>
             </div>
             <button
               type="submit"
-              className="bg-yellow-500 hover:text-white text-black font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+              className="bg-yellow-500 text-black hover:text-white font-bold py-2 px-4 rounded-md w-full focus:outline-none focus:shadow-outline"
             >
               SUBMIT
             </button>

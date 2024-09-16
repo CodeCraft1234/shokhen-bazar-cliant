@@ -56,7 +56,7 @@ const AdminDashboard = () => {
         <div className="flex items-center justify-center mb-8">
           <Link to={"/"}>
             <img
-              className="h-20 w:24 lg:w-36 "
+              className="h-24 w:24 lg:w-36 "
               src={latestLogo?.photo}
               alt="Logo"
             />

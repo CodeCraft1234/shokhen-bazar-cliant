@@ -41,6 +41,11 @@ import OrganicProduct from "./Components/OrganicProduct/OrganicProduct";
 import LatestNews from "./Components/LatestNews/LatestNews";
 import NewsDetail from "./Components/NewsDetail/NewsDetail";
 import ProductDetails from "./Components/ProductDetailss/ProductsDetails";
+import BeautyProduct from "./Components/BeautyProduct/BeautyProduct";
+import MyOrders from "./Pages/MyOrders";
+import SearchResults from "./Components/Navber/SearchResults";
+
+
 
 const router = createBrowserRouter([
   {
@@ -56,7 +61,7 @@ const router = createBrowserRouter([
         element:<Login></Login>
       },
       {
-        path:'/checkout',
+        path:'/checkout/:title/:price',
         element:<Checkout></Checkout>
       },
       {
@@ -71,9 +76,16 @@ const router = createBrowserRouter([
         path:'/contact',
         element:<Contact></Contact>
       },
+      { path: "/search/:title",
+         element: <SearchResults />
+      },
       {
         path:'/',
         element:<OrganicProduct></OrganicProduct>
+      },
+      {
+        path:'/beauty-product',
+        element:<BeautyProduct></BeautyProduct>
       },
       {
         path:'/product/:id',
@@ -92,14 +104,25 @@ const router = createBrowserRouter([
         path:'/news/:id',
         element:<NewsDetail></NewsDetail>
       },
+ 
       {
         path:'/myFavourite',
         element:<MyFavourite></MyFavourite>
       },
       {
+        path:'/myOrders',
+        element:<MyOrders></MyOrders>
+      },
+      {
         path:'/order-success',
         element: <OrderSuccess></OrderSuccess>
       },
+      {
+        path:'/productDetails/:id',
+        element:<ProductDetails></ProductDetails>,
+        loader: ({ params }) => fetch(`https://shokher-bazar.vercel.app/productDetails/${params.id}`)
+      },
+
       {
         path:'dashboard',
         element:<DashboardRoot></DashboardRoot>,
@@ -132,10 +155,11 @@ const router = createBrowserRouter([
             path:'/dashboard/admin/allProducts',
             element:<AllProduct></AllProduct>
           },
+          
           {
             path:'/dashboard/admin/updateProducts/:id',
             element:<UpdateProducts></UpdateProducts>,
-            loader: ({ params }) => fetch(`https://hirikbazar.vercel.app/products/${params.id}`)
+            loader: ({ params }) => fetch(`https://shokher-bazar.vercel.app/products/${params.id}`)
           },
           {
             path: "/dashboard/admin/addLinks",

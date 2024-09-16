@@ -21,13 +21,13 @@ const MyFavourite = () => {
       }, []);
 
     return (
-        <div className=" pt-36">
+        <div className=" pt-36 mb-5">
            <Helmet>
                 <title>বিশ্বস্ত-বাজার | My Favourite</title>
                 <link rel="canonical" href="https://www.tacobell.com/" />
             </Helmet>
             <h1 className="text-2xl font-bold mb-3 text-center text-black">My Favourite</h1>
-             <div className="grid grid-cols-2  md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3  mx-8">
+             <div className="grid grid-cols-2  md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-5  mx-8">
 
 {cartItems.map((item) => (
   <ProductCard key={item._id} item={item}></ProductCard>
